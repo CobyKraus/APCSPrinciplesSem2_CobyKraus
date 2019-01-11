@@ -51,23 +51,23 @@ function bubbleSort(numbers){
         var temp = numbers[i];
         numbers[i] = numbers[j];
         numbers[j] = temp
+      }
     }
-  }
   }
   console.log(numbers)
 }
 //Insertion Sort
 function insertionSort(numbers){
   for(var i = 1; i<numbers.length;i++){
-    for(var j = 1; j>0;j--){
+    for(var j = i; j>0;j--){
       if(numbers[j]<numbers[j-1]){
         var temp = numbers[j];
         numbers[j]=numbers[j-1];
         numbers[j-1]=temp;
+      }
+    }
   }
-  }
-}
-console.log(numbers)
+  console.log(numbers)
 }
 function setup(){
   randomArray();
