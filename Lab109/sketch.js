@@ -72,8 +72,9 @@ function bubbleSort(numbers){
         numbers[j] = temp
       }
     }
+     //console.log(numbers);
   }
-   console.log("+++++++++++++++++++++++++++++++  bubble");
+  console.log("+++++++++++++++++++++++++++++++  bubble");
   console.log(numbers)
   console.log("number of milliseconds = " + newerMillisecond);
   console.log("number of swaps  = " +swap);
@@ -94,6 +95,7 @@ function insertionSort(numbers){
         numbers[j-1]=temp;
       }
     }
+
   }
   console.log("+++++++++++++++++++++++++++++++  insertion");
  console.log(numbers)
