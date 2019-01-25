@@ -1,27 +1,31 @@
 var data;
 var barHeight;
+
+function preload(){
+    loadJSON("population.json", gotData);
+}
+
+
 function setup(){
   var cnv = createCanvas(800,800);
   cnv.position((windowWidth-width)/2,30);
   background(20);
   barHeight=20;
-
-
-
+  insertionSort();
+  //insertionSort();
 }
 function draw(){
   //useData();
   fill(0,255,0);
-  insertionSort();
+
 
 
 }
-function preload(){
-    loadJSON("population.json", gotData);
-}
+
 
 function gotData(dataNew){
   data = dataNew;
+
 }
 
 function BubbleSort(){
@@ -29,25 +33,26 @@ function BubbleSort(){
   for(var i = length - 1; i >= 0; i-- ){
     for(var j = 0; j < i; j++ ){
       if (data.countrydata[i].males < data.countrydata[j].males){
-        var temp = data.countrydata[i].males;
-        data.countrydata[i].males = data.countrydata[j].males;
-        data.countrydata[j].males = temp
+        var temp = data.countrydata[i];
+        data.countrydata[i] = data.countrydata[j];
+        data.countrydata[j] = temp
       }
     }
   }
+  console.log("BubbleSort")
   console.log(data.countrydata.males);
 }
 
-function insertionSort(dataNew){
+function insertionSort(){
   for(var i = 1; i<data.countrydata.length;i++){
     for(var j = i; j>0;j--){
       if(data.countrydata[j].females<data.countrydata[j-1].females){
-        var temp = data.countrydata[j].males;
-        data.countrydata[j].males=data.countrydata[j-1].males;
-        data.countrydata[j-1].males=temp;
+        var temp = data.countrydata[j];
+        data.countrydata[j]=data.countrydata[j-1];
+        data.countrydata[j-1]=temp;
       }
     }
-
+    console.log("InsertionSort")
+    console.log(data.countrydata.females)
   }
-  console.log(data.countrydata.males);
 }
