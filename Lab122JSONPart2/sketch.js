@@ -11,7 +11,7 @@ function setup(){
   cnv.position((windowWidth-width)/2,30);
   background(20);
   barHeight=20;
-  insertionSort();
+  selectionSort();
   //insertionSort();
 }
 function draw(){
