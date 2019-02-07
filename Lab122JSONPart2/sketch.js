@@ -11,15 +11,15 @@ function setup(){
   cnv.position((windowWidth-width)/2,30);
   background(20);
   barHeight=20;
-  selectionSort();
-  //insertionSort();
+  BubbleSort();
 }
 function draw(){
   //useData();
-  fill(0,255,0);
+  for(i=0;i<data.countrydata.length;i++){
+    fill(255,0,0)
+    rect(i,200,2,i)
 
-
-
+}
 }
 
 
@@ -40,8 +40,10 @@ function BubbleSort(){
     }
   }
   console.log("BubbleSort")
-  console.log(data.countrydata.males);
-}
+  console.log(data);
+
+  }
+
 
 function insertionSort(){
   for(var i = 1; i<data.countrydata.length;i++){
@@ -52,7 +54,8 @@ function insertionSort(){
         data.countrydata[j-1]=temp;
       }
     }
-    console.log("InsertionSort")
-    console.log(data.countrydata.females)
+
   }
+  console.log("InsertionSort")
+  console.log(data)
 }
