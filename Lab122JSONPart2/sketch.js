@@ -11,14 +11,27 @@ function setup(){
   cnv.position((windowWidth-width)/2,30);
   background(20);
   barHeight=20;
-  BubbleSort();
+
 }
 function draw(){
   //useData();
+  if(keyCode===UP_ARROW){
+    BubbleSort();
+    for(i=0;i<data.countrydata.length;i++){
+      fill(255,0,0)
+      stroke(0,0,255)
+      strokeWeight(0.5);
+      rect(i,0,2,data.countrydata[i].males/80000)
+    }
+}
+if(keyCode===DOWN_ARROW){
+  insertionSort();
   for(i=0;i<data.countrydata.length;i++){
     fill(255,0,0)
-    rect(i,200,2,i)
-
+    stroke(0,0,255)
+    strokeWeight(0.5);
+    rect(i,0,2,data.countrydata[i].females/80000)
+  }
 }
 }
 
@@ -36,12 +49,11 @@ function BubbleSort(){
         var temp = data.countrydata[i];
         data.countrydata[i] = data.countrydata[j];
         data.countrydata[j] = temp
-      }
     }
   }
   console.log("BubbleSort")
   console.log(data);
-
+}
   }
 
 
