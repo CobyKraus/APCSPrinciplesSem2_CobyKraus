@@ -11,6 +11,11 @@ function setup(){
   cnv.position((windowWidth-width)/2,30);
   background(20);
   barHeight=20;
+  textFont();
+  fill(0,255,0);
+  textAlign(CENTER);
+  textSize(15);
+  text("Pink = females(down arrow).  Blue = males(up arrow)",200,400)
 
 }
 function draw(){
@@ -20,7 +25,7 @@ function draw(){
     for(i=0;i<data.countrydata.length;i++){
       fill(255,0,0)
       stroke(0,0,255)
-      strokeWeight(0.5);
+      strokeWeight(6);
       rect(i,0,2,data.countrydata[i].males/80000)
     }
 }
