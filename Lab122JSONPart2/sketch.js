@@ -2,6 +2,7 @@ var data;
 var barHeight;
 
 function preload(){
+  //loading the json data
     loadJSON("population.json", gotData);
 }
 
@@ -20,32 +21,18 @@ function setup(){
 }
 function draw(){
   //useData();
-  if(keyCode===UP_ARROW){
-    BubbleSort();
-    for(i=0;i<data.countrydata.length;i++){
-      fill(255,0,0)
-      stroke(0,0,255)
-      strokeWeight(6);
-      rect(i,0,2,data.countrydata[i].males/80000)
-    }
+  //calling functions
+  sortingMales();
+  sortingFemales();
 }
-if(keyCode===DOWN_ARROW){
-  insertionSort();
-  for(i=0;i<data.countrydata.length;i++){
-    fill(255,0,0)
-    stroke(0,0,255)
-    strokeWeight(0.5);
-    rect(i,0,2,data.countrydata[i].females/80000)
-  }
-}
-}
+
 
 
 function gotData(dataNew){
   data = dataNew;
 
 }
-
+//sorts the number of males from each country
 function BubbleSort(){
   var length = data.countrydata.length;
   for(var i = length - 1; i >= 0; i-- ){
@@ -57,11 +44,11 @@ function BubbleSort(){
     }
   }
   console.log("BubbleSort")
-  console.log(data);
+  console.log(data);  //logs the new sorted array
 }
   }
 
-
+//sorts the number of females from each country
 function insertionSort(){
   for(var i = 1; i<data.countrydata.length;i++){
     for(var j = i; j>0;j--){
@@ -74,5 +61,31 @@ function insertionSort(){
 
   }
   console.log("InsertionSort")
-  console.log(data)
+  console.log(data) //logs the new sorted array
+}
+//visual representation
+//creates rectangles for each country based on their number of females
+function sortingFemales(){
+  if(keyCode===DOWN_ARROW){
+    insertionSort();
+    for(i=0;i<data.countrydata.length;i++){
+      fill(255,0,0)
+      stroke(0,0,255)
+      strokeWeight(0.5);
+      rect(i,0,2,data.countrydata[i].females/80000)
+    }
+  }
+}
+//visual representation
+//creates rectangles for each country based on their number of males
+function sortingMales(){
+  if(keyCode===UP_ARROW){
+    BubbleSort();
+    for(i=0;i<data.countrydata.length;i++){
+      fill(255,0,0)
+      stroke(0,0,255)
+      strokeWeight(6);
+      rect(i,0,2,data.countrydata[i].males/80000)
+    }
+}
 }
