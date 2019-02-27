@@ -6,7 +6,7 @@ function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(20,20,20);
-  loadBalls(200);  //  !!!!!!!!!!  this is a function call
+  loadBalls(20);  //  !!!!!!!!!!  this is a function call
 }
 
 function draw() {
@@ -23,7 +23,7 @@ function loadBalls(numBalls){
         var loc = createVector(random(width), random(height));
         var vel = createVector(random(-3,3), random(-3,3));
         var radius = random(20,40);
-        var col = color(random(255), random(255), random(255));
+        var col = color(0, 0, random(0,255));
 
         balls.push(new Ball(loc, vel, radius, col));
 

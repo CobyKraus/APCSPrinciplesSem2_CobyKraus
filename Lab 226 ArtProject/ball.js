@@ -34,9 +34,16 @@ function Ball(location, velocity, radius, col){
     // render() draws the ball at the new location
    this.render = function(){
       fill(220,0,220);
-      stroke(220,0,220)
+      if(this.loc.x<400){
+      stroke(0,0,random(100,200)+this.loc.dist(this.vel))
       strokeWeight(random(1,10));
       line(this.loc.x, this.loc.y, 10, 40);
+    }
+    if(this.loc.x>400){
+    stroke(random(100,200)+this.loc.dist(this.vel),0,0)
+    strokeWeight(random(1,10));
+    line(this.loc.x, this.loc.y, 400, 400);
+  }
    }
 
 }
