@@ -1,20 +1,22 @@
 //  Global variables
 var balls = [];
-
+var toggle = true;
 // put setup code here
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(20,20,20);
-  loadBalls(20);  //  !!!!!!!!!!  this is a function call
+  loadBalls(40);  //  !!!!!!!!!!  this is a function call
 }
 
 function draw() {
-  background(20,20,20);
+  if(toggle===true){
+  background(20,20,20,5);
   for(var i = 0; i < balls.length; i = i + 1){
     balls[i].run();
   }
-
+}
+  stop();
 }
 
 function loadBalls(numBalls){
@@ -29,4 +31,13 @@ function loadBalls(numBalls){
 
     }
 
+
 }
+ function stop(){
+   if(mouseIsPressed){
+     toggle=false;
+   }
+   else{
+     toggle=true;
+   }
+ }
