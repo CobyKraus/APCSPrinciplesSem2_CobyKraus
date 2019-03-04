@@ -49,11 +49,11 @@ function Ball(location, velocity, radius, col){
        strokeWeight(random(1,5));
        line(this.loc.x, this.loc.y, 100, 200);
      }
-     if(this.loc.x>400){
-     stroke(0,random(100,200)+this.loc.dist(this.vel),0)
-     strokeWeight(random(1,5));
-     line(this.loc.x, this.loc.y, 40, 40);
-   }
+   //   if(this.loc.x>400){
+   //   stroke(0,random(100,200)+this.loc.dist(this.vel),0)
+   //   strokeWeight(random(1,5));
+   //   line(this.loc.x, this.loc.y, 40, 40);
+   // }
  }
 
 
