@@ -37,7 +37,7 @@ function loadBalls(numBalls){
    if(mouseIsPressed){
      toggle=false;
    }
-   else{
-     toggle=true;
-   }
+   //else{
+     //toggle=true;
+   //}
  }
