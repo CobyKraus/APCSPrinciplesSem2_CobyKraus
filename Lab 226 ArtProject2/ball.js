@@ -37,17 +37,17 @@ function Ball(location, velocity, radius, col){
        if(this.loc.y>400 ){
        stroke(0,0,random(100,200)+this.loc.dist(this.vel))
        strokeWeight(random(1,5));
-       line(this.loc.x, this.loc.y, 10, 400);
+       line(this.loc.x, this.loc.y, 10, height/2);
      }
      if(this.loc.x>400){
      stroke(random(100,200)+this.loc.dist(this.vel),0,0)
      strokeWeight(random(1,5));
-     line(this.loc.x, this.loc.y, 800, 400);
+     line(this.loc.x, this.loc.y, width, height/2);
    }
      if(this.loc.y<400){
        stroke(random(100,200)+this.loc.dist(this.vel),random(100,200)+this.loc.dist(this.vel),random(100,200)+this.loc.dist(this.vel))
        strokeWeight(random(1,5));
-       line(this.loc.x, this.loc.y, 400, 400);
+       line(this.loc.x, this.loc.y, width/2, height/2);
      }
    //   if(this.loc.x>400){
    //   stroke(0,random(100,200)+this.loc.dist(this.vel),0)
