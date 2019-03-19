@@ -2,6 +2,7 @@
 
 var balls = [];
 var square;
+var square2;
 var score = 0;
 var currNumOfBalls = 0;
 //var score = 0;
@@ -14,8 +15,9 @@ function setup() {
   loadBalls(1);  //  !!!!!!!!!!  this is a function call
   //creates the paddle
   square = new Square(createVector(0, 0),
-                      33,
+                      500,
                       color(random(255),random(255),random(255)))
+  //square2 = new Square(createVector(0, 0), 33, color(random(255),random(255),random(255)))
 
   }
 
@@ -26,6 +28,7 @@ function draw() {
   textSize(20);
   text(score, 100, 100);
   square.run();
+  //square2.run();
   //prints balls and makes balls move
   for(var i = 0; i < balls.length; i = i + 1){
     balls[i].run();
@@ -77,7 +80,7 @@ function ballBounce(){
       //adds score as balls hit paddle
       score++;
       //adds balls to the current number of balls variable
-      currNumOfBalls+=3;
+      //currNumOfBalls+=3;
       //resets the balls after they hit bottom of paddle
       if (balls[i].vel.y > 0 || balls.length === 0){
         //resets the balls and adds balls if a ball hits bottom of paddle
@@ -89,4 +92,4 @@ function ballBounce(){
 
   }
   }
-}
+ }

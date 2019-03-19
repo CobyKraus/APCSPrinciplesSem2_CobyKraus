@@ -4,11 +4,12 @@
 **  Aug 20, 2018
 */
 //creating a square function
-function Square(loc,  col){
+function Square(loc, col){
   // Instance variables
    this.loc = loc;
    this.w = 150;
-   this.h = 20;
+   //this.heighth=heighth
+   this.h = 30;
    this.col = col;
   // This function calls other functions
   this.run = function(){
