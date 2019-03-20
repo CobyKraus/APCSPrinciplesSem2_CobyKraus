@@ -45,7 +45,7 @@ function Ball(location, velocity, radius, col){
 
     // render() draws the ball at the new location
    this.render = function(){
-      fill(this.col);
+      fill(random(0,250),random(0,250),random(0,250));
       //creatin the ball shape
       ellipse(this.loc.x, this.loc.y, this.rad, this.rad);
    }

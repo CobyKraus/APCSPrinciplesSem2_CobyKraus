@@ -15,6 +15,7 @@ function Square(loc, col){
   this.run = function(){
     this.update();
     this.render();
+    this.keyisPressed2();
   }
 
   //lerping paddle to mouse so that paddle follows mouse
@@ -28,8 +29,18 @@ function Square(loc, col){
     // render() draws the square at the new location
     //creating the parameters of the square
    this.render = function(){
-      fill(0,255,0);
+      fill(80,100,255);
       rect(this.loc.x,500 ,  this.w, this.h);
    }
-
+   this.keyisPressed2=function(){
+     if(keyCode===UP_ARROW){
+       this.w=200;
+     }
+     if(keyCode===DOWN_ARROW){
+       this.w=125;
+     }
+     if(keyCode===RIGHT_ARROW){
+      this.w=100;
+    }
+   }
 }
