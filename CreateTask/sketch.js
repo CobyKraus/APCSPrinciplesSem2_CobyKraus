@@ -2,6 +2,7 @@
 var gameState=1;
 var balls = [];
 var square;
+
 var score = 0;
 var currNumOfBalls = 0;
 //var score = 0;
@@ -17,7 +18,7 @@ function setup() {
                       500,
                       color(random(255),random(255),random(255)))
   //square2 = new Square(createVector(0, 0), 33, color(random(255),random(255),random(255)))
-
+  bouncer = ellipse(random(0,800),random(0,600),50,50)
   }
 
 //makes paddle appear and move
@@ -31,7 +32,6 @@ function draw() {
   if(gameState===2){
     gameIsHappening()
   //ballBounce();
-
 
 
   //checks for collision detection and splices the balls from the array
