@@ -2,7 +2,7 @@
 var gameState=1;
 var balls = [];
 var square;
-
+var ball2;
 var score = 0;
 var currNumOfBalls = 0;
 //var score = 0;
@@ -18,7 +18,7 @@ function setup() {
                       500,
                       color(random(255),random(255),random(255)))
   //square2 = new Square(createVector(0, 0), 33, color(random(255),random(255),random(255)))
-  bouncer = ellipse(random(0,800),random(0,600),50,50)
+
   }
 
 //makes paddle appear and move
@@ -27,9 +27,9 @@ function draw() {
   if(gameState===1){
     fill(255,0,0)
     textSize(20);
-    text("Keep the ball in the air. Up=Easy, Down=Medium, Right=Hard", 100, 300);
+    text("Keep the ball in the air. Up=Easy, Down=Medium, Right=Hard Left=Infinite Mode", 50, 300);
   }
-  if(gameState===2){
+  else{
     gameIsHappening()
   //ballBounce();
 
@@ -54,7 +54,7 @@ function loadBalls(numBalls){
     }
   }
  function gameOver(){
-   if (balls.length===0){
+   if (balls.length===0 && gameState===2){
      textSize(20);
      text("Well done! Your score was " + score,400,400);
    }
@@ -107,6 +107,34 @@ function keyisPressed(){
             //balls[i].vel.y=random(-3,0);// remove one element at index i
         //}
 
+    }
+    }
+  }
+  if(keyCode===LEFT_ARROW){
+    gameState=3;
+    for (var i = 0; i <=balls.length-1; i++){
+      if (balls[i].loc.x>(square.loc.x) &&
+      balls[i].loc.x < (square.loc.x + square.w) &&
+      balls[i].loc.y>(square.loc.y) &&
+      balls[i].loc.y<(square.loc.y + square.h)){
+        //adds score as balls hit paddle
+        score++;
+        //adds balls to the current number of balls variable
+        //currNumOfBalls+=3;
+        //resets the balls after they hit bottom of paddle
+        if (balls[i].vel.y > 0 || balls.length === 0){
+          //resets the balls and adds balls if a ball hits bottom of paddle
+          balls[i].vel.y=random(-5,-15);
+          balls[i].vel.x=random(-10,10)
+
+        } //else {
+            //balls[i].vel.y=random(-3,0);// remove one element at index i
+        //}
+
+        }
+        if(balls[i].loc.y>780){
+          balls[i].vel.y=random(-5,-15);
+          console.log("hey");
     }
     }
   }
