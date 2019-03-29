@@ -2,7 +2,8 @@
 var gameState=1;
 var balls = [];
 var square;
-var ball2;
+var addBalls = true;
+var ball2 = [];
 var score = 0;
 var currNumOfBalls = 0;
 //var score = 0;
@@ -30,6 +31,9 @@ function draw() {
     text("Keep the ball in the air. Up=Easy, Down=Medium, Right=Hard Left=Infinite Mode", 50, 300);
   }
   else{
+    if(addBalls===true){
+      loadBalls2(1)
+  }
     gameIsHappening()
   //ballBounce();
 
@@ -50,9 +54,22 @@ function loadBalls(numBalls){
         var radius = random(20,40);
         var col = color(random(255), random(255), random(255));
         balls.push(new Ball(loc, vel, radius, col));
-
     }
   }
+  function loadBalls2(numBalls){
+      for(var i = 0; i < numBalls; i++){
+          if(score%5===0 && score!=0){
+            addBalls=true;
+            var loc = createVector(random(width), random(height)/8);
+            var vel = createVector(random(-3,3), random(-3,3));
+            var radius = random(20,40);
+            var col = color(255,255,255);
+            balls.push(new Ball(loc, vel, radius, col));
+            addBalls=false;
+          }
+
+      }
+    }
  function gameOver(){
    if (balls.length===0 && gameState===2){
      textSize(20);
@@ -161,6 +178,8 @@ function ballBounce(){
   }
   }
  }
+
+
  function gameIsHappening(){
    background(20,20,20);
    //printing the score
