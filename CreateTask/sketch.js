@@ -58,7 +58,7 @@ function loadBalls(numBalls){
   }
   function loadBalls2(numBalls){
       for(var i = 0; i < numBalls; i++){
-          if(score%5===0 && score!=0){
+          if(score===5){
             addBalls=true;
             var loc = createVector(random(width), random(height)/8);
             var vel = createVector(random(-3,3), random(-3,3));
