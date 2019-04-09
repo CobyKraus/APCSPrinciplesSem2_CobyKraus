@@ -11,7 +11,7 @@ var currNumOfBalls = 0;
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
-  background(20,20,20); //draws canvas
+  background(100,200,100); //draws canvas
     //calls for a certain number of balls
   loadBalls(1);  //  !!!!!!!!!!  this is a function call
   //creates the paddle
@@ -181,7 +181,7 @@ function ballBounce(){
 
 
  function gameIsHappening(){
-   background(20,20,20);
+   background(100,200,100);
    //printing the score
    textSize(20);
    text(score, 100, 100);
