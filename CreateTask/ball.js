@@ -1,7 +1,5 @@
 /*
 **  Ball Constructor Function
-**  Coby Kraus
-**  Aug 20, 2018
 */
 //function to create the ball
 function Ball(location, velocity, radius, col){

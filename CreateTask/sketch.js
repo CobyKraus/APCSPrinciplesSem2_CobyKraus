@@ -151,7 +151,6 @@ function keyisPressed(){
         }
         if(balls[i].loc.y>780){
           balls[i].vel.y=random(-5,-15);
-          console.log("hey");
     }
     }
   }
